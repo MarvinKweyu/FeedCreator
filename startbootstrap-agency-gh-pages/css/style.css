@@ -1,0 +1,14 @@
+
+body,html{
+    height: 100%;
+}
+
+.bg{
+    background-image: url("../img/sample.jpg");
+    /* full height */
+    height: 100%;
+    /* center and scale image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
