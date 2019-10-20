@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django.contrib.postgres', # allow text searching
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
