@@ -18,7 +18,9 @@ from django.urls import path,include
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import PostSitemap
 
-from django.views.generic.base import TemplateView
+# from django.views.generic.base import TemplateView
+from django.views.generic import TemplateView
+
 
 
 sitemaps = {
