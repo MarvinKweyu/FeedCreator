@@ -14,14 +14,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> {% trans "Benjava" %}| {% block title %}Home{% endblock %}</title>
+    <title> Benjava |Home</title>
     <link href="{% static 'css/blog.css' %}" rel="stylesheet" >
+
+    <!-- morecustom styling -->
+  <link rel="stylesheet" href="{% static 'css/custom.css'%}">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="{%url  %}#page-top">Benjava</a>
+            <a class="navbar-brand js-scroll-trigger" href="{%url 'home'%}#page-top">Benjava</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -31,22 +34,22 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+                        <a class="nav-link js-scroll-trigger" href="{% url 'home' %}">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#work">Portfolio</a>
+                        <a class="nav-link js-scroll-trigger" href="{% url 'home' %}">Portfolio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                        <a class="nav-link js-scroll-trigger" href="{% url 'home' %}">About</a>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="{% url 'blog:post_list' %}">News</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{% url 'home' %}">Team</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                        <a class="nav-link js-scroll-trigger" href="{% url 'home' %}">Contact</a>
                     </li>
                 </ul>
             </div>

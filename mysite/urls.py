@@ -22,9 +22,8 @@ from blog.sitemaps import PostSitemap
 from django.views.generic import TemplateView
 
 
-
 sitemaps = {
-    'posts':PostSitemap,
+    'posts': PostSitemap,
 }
 
 urlpatterns = [

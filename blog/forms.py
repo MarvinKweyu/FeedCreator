@@ -17,4 +17,3 @@ class CommentForm(forms.ModelForm):
 
 class SearchForm(forms.Form):
     query = forms.CharField() # use query field to allow search terms
-    
