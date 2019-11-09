@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery="full" %}
+{% bootstrap_messages %}
+
+{% block title %}Log-in{% endblock title%}
+
+{% block content%}
+<h1>Log -in</h1>
+
+<div class="module">
+    {% if form.errors %}
+        <p>YOur username and password did not match.Try again</p>
+    {% else %}
+        <p>Please use the following form to log in</p>
+    {% endif %}
+
+
+    <div class="login-form">
+        <form action="{% url 'login' %}" method="post">
+{#            {{form.as_p }}#}
+            {% bootstrap_form form layout="horizontal" %}
+            {% csrf_token %}
+            <p><input type="submit" value="Log-in"></p>
+        </form>
+    </div>
+</div>
+{% endblock content%}
