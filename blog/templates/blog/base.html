@@ -20,7 +20,7 @@
     <!-- morecustom styling -->
   <link rel="stylesheet" href="{% static 'css/custom.css'%}">
 </head>
-<body>
+<body >
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
         <div class="container">
@@ -62,24 +62,105 @@
         {%endblock content%}
     </div>
 
-    <div id="sidebar">
-        <h2>My Blog</h2>
+    <div class="sidebar">
 
-        <h3> Latest posts</h3>
-        <p>This is my blog.I've written {% total_posts %} posts so far</p>
-        <p><a href="{% url 'blog:post_feed' %}">Subscribe to my RSS feed</a></p>
-        {% show_latest_posts 3 %}
+        <!--Card: Jumbotron-->
+        <div class="card blue-gradient mb-4 wow fadeIn">
 
-        <h3>Most commented posts</h3>
-        {% get_most_commented_posts as most_commented_posts %}
-        <ul>
-            {% for post in most_commented_posts %}
-                <li>
-                    <a href="{{ post.get_absolute_url }}"> {{ post.title }}</a>
-                </li>
-        {% endfor %}
-        </ul>
+            <!-- Content -->
+            <div class="card-body text-white text-center">
+
+            <script src="{% static 'js/ClientAddition/widget.min.js' %}"></script>
+
+
+            </div>
+            <!-- Content -->
+        </div>
+         <!--Card-->
+                        <div class="card mb-4 wow fadeIn">
+
+                            <div class="card-header">Related articles</div>
+
+                            <!--Card content-->
+                            <div class="card-body">
+                                <script src="{% static 'js/ClientAddition/widget.min.js' %}"></script>
+
+                            </div>
+
+                        </div>
+                        <!--/.Card-->
+        <!--Card: Jumbotron-->
+
+        <!--Card : Dynamic content wrapper-->
+        <div class="card mb-4 text-center wow fadeIn">
+
+        </div>
+        <!--/.Card : Dynamic content wrapper-->
+
+        <!--Card-->
+        <div class="card mb-4 wow fadeIn">
+
+            <div class="card-header">Related articles</div>
+
+                <!--Card content-->
+                <div class="card-body">
+
+                    <ul class="list-unstyled">
+                        <li class="media">
+                            <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder7.jpg" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <a href="">
+                                    <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
+                                </a>
+                                Cras sit amet nibh libero, in gravida nulla (...)
+                            </div>
+                        </li>
+                        <li class="media my-4">
+                            <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder6.jpg" alt="An image">
+                            <div class="media-body">
+                                <a href="">
+                                    <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
+                                </a>
+                                Cras sit amet nibh libero, in gravida nulla (...)
+                            </div>
+                        </li>
+                        <li class="media">
+                            <img class="d-flex mr-3" src="https://mdbootstrap.com/img/Photos/Others/placeholder5.jpg" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <a href="">
+                                    <h5 class="mt-0 mb-1 font-weight-bold">List-based media object</h5>
+                                </a>
+                                Cras sit amet nibh libero, in gravida nulla (...)
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        <!--/.Card-->
+
     </div>
+
+{#    <div id="sidebar">#}
+{#        <h2>News desk</h2>#}
+
+
+{#        <h3> Latest posts</h3>#}
+{#        <p>I've written {% total_posts %} posts so far</p>#}
+{#        <p><a href="{% url 'blog:post_feed' %}">Subscribe to my RSS feed</a></p>#}
+{#        {% show_latest_posts 3 %}#}
+{##}
+{#        <h3>Most commented posts</h3>#}
+{#        {% get_most_commented_posts as most_commented_posts %}#}
+{#        <ul>#}
+{#            {% for post in most_commented_posts %}#}
+{#                <li>#}
+{#                    <a href="{{ post.get_absolute_url }}"> {{ post.title }}</a>#}
+{#                </li>#}
+{#        {% endfor %}#}
+{#        </ul>#}
+{#    </div>#}
     
 </body>
 </html>
