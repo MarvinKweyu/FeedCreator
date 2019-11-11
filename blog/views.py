@@ -8,6 +8,11 @@ from django.core.mail import send_mail # allow mail sending
 from taggit.models import Tag
 from django.db.models import Count
 from django.contrib.postgres.search import SearchVector,SearchQuery, SearchRank
+# CRUD
+from django.views.generic import CreateView,UpdateView, DeleteView
+from django.urls import reverse_lazy
+# groups
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 # Create your views here.
 
 
@@ -136,3 +141,60 @@ def post_search(request):
                                             ).filter(rank__gte=0.3).order_by('-rank')
 
     return render(request,'blog/post/search.html', {'form':form, 'query':query, 'results':results})
+
+
+class OwnerMixin(object):
+    """ Get object s belonging to current user"""
+    def get_queryset(self):
+        qs = super(OwnerMixin, self).get_queryset()
+        return qs.filter(author=self.request.user)
+
+
+class OwnerEditMixin(object):
+    """ When form is submitted , set current user as woner of object"""
+    def form_valid(self):
+        """used by CRUD"""
+        form.instance.author = self.request.user
+        return super(OwnerEditMixin, self).form_valid(form)
+
+
+class OwnerPostMixin(OwnerMixin, LoginRequiredMixin):
+    model = Post
+    # fields to  include in CRUD
+    fields = ['title', 'slug', 'body', 'publish', 'created', 'status']
+    success_url = reverse_lazy('manage_post_list')
+    template_name = 'blog/manage/post/form.html'
+
+
+class OwnerPostEditMixin(OwnerPostMixin, OwnerEditMixin):
+    fields = ['title', 'slug', 'body', 'publish', 'created', 'status']
+    success_url = reverse_lazy('manage_post_list')
+    template_name = 'blog/manage/post/form.html'
+
+
+class ManageCourseListView(OwnerPostMixin, ListView):
+    """List Posts from user"""
+    template_name = 'blog/manage/post/list.html'
+
+
+class PostCreateView(PermissionRequiredMixin, OwnerPostEditMixin, CreateView):
+    """Create a new post"""
+    permission_required = 'post.add_post'
+
+
+class PostEditView(OwnerPostEditMixin, UpdateView):
+    """Update a current post"""
+    permission_required = 'post.change_post'
+
+
+class CourseDeleteView(PermissionRequiredMixin, OwnerPostMixin, DeleteView):
+    """Delete a course"""
+    template_name = 'blog/manage/post/delete.html'
+    success_url = reverse_lazy('manage_post_list')
+    permission_required = 'post.delete_post'
+
+
+
+
+
+
