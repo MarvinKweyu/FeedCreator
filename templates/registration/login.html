@@ -19,7 +19,7 @@
 
 
     <div class="login-form">
-        <form action="{% url 'login' %}" method="post">
+        <form action="{% url 'management:login' %}" method="post">
 {#            {{form.as_p }}#}
             {% bootstrap_form form layout="horizontal" %}
             {% csrf_token %}

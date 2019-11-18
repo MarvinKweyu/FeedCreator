@@ -20,7 +20,6 @@ from blog.sitemaps import PostSitemap
 
 # from django.views.generic.base import TemplateView
 from django.views.generic import TemplateView
-from django.contrib.auth import views as auth_views
 
 
 sitemaps = {
@@ -30,10 +29,7 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='blog/index.html'), name='home'),  # at 8000
-    # let sofia log in
-    path('account/login', auth_views.LoginView.as_view(), name='login'),
-    path('account/logout', auth_views.LogoutView.as_view(), name='logout'),
-    path('news/', include('blog.urls',namespace='blog')),  # user side
-    path('administrator/', include('management.urls')),  # manager app
-    path('sitemap.xml',sitemap, {'sitemaps':sitemaps}, name='django.contrib.sitemaps.views.sitemap')
+    path('news/', include('blog.urls', namespace='blog')),  # user side
+    path('administrator/', include('management.urls', namespace='management')),  # manager app
+    path('sitemap.xml', sitemap, {'sitemaps':sitemaps}, name='django.contrib.sitemaps.views.sitemap')
 ]

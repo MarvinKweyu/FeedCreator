@@ -169,3 +169,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_USE_TLS = True
 
 SITE_ID = 1
+
+from django.urls import reverse_lazy
+
+LOGIN_REDIRECT_URL = reverse_lazy('management:manage_post_list') # where do we go after login
+LOGIN_URL = reverse_lazy('management:login') # take user to log in
+
