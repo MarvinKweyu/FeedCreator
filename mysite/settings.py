@@ -39,11 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles', #manage static files
-    'blog.apps.BlogConfig',
+    'blog.apps.BlogConfig',  # user side
+    'management.apps.ManagementConfig', # administrator management
     'taggit',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'django.contrib.postgres', # allow text searching
+    'django.contrib.postgres',  # allow text searching
     'bootstrap4',
 ]
 
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR + '/templates/',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -99,9 +100,9 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog',
-        'USER':'blog',
-        'PASSWORD':'mozart_sonata',
+        'NAME': 'benjava_refactored',
+        'USER': 'benjava',
+        'PASSWORD': 'benjava',
         # 'HOST':'localhost',
         # 'PORT':'3306',
     }
@@ -147,6 +148,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# look for static files in this directory and move them to static root directory
+# used during collect static
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
+
+# store static in this directory
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # send mail to the console of project
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

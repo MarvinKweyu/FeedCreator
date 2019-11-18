@@ -29,9 +29,11 @@ sitemaps = {
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='blog/index.html'), name='home'),
+    path('', TemplateView.as_view(template_name='blog/index.html'), name='home'),  # at 8000
+    # let sofia log in
     path('account/login', auth_views.LoginView.as_view(), name='login'),
     path('account/logout', auth_views.LogoutView.as_view(), name='logout'),
-    path('blog/',include('blog.urls',namespace='blog')),
+    path('news/', include('blog.urls',namespace='blog')),  # user side
+    path('administrator/', include('management.urls')),  # manager app
     path('sitemap.xml',sitemap, {'sitemaps':sitemaps}, name='django.contrib.sitemaps.views.sitemap')
 ]
