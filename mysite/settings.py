@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles', #manage static files
+    'django.contrib.staticfiles', # manage static files
     'blog.apps.BlogConfig',  # user side
     'management.apps.ManagementConfig', # administrator management
     'taggit',
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.postgres',  # allow text searching
     'bootstrap4',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [

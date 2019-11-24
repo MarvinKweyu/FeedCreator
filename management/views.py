@@ -18,9 +18,11 @@ class OwnerMixin(object):
 
 
 class OwnerEditMixin(object):
+    print('reached')
     """ When form is submitted , set current user as owner of object"""
     def form_valid(self):
         """used by CRUD"""
+        # print("Work")
         form.instance.author = self.request.user
         return super(OwnerEditMixin, self).form_valid(form)
 
@@ -28,14 +30,14 @@ class OwnerEditMixin(object):
 class OwnerPostMixin(OwnerMixin, LoginRequiredMixin):
     model = Post
     # fields to  include in CRUD
-    fields = ['title', 'slug', 'body', 'publish', 'created', 'status']
-    success_url = reverse_lazy('manage_post_list')
+    fields = ['title', 'slug', 'body', 'publish', 'status']
+    success_url = reverse_lazy('management:manage_post_list')
     template_name = 'blog/manage/post/form.html'
 
 
 class OwnerPostEditMixin(OwnerPostMixin, OwnerEditMixin):
-    fields = ['title', 'slug', 'body', 'publish', 'created', 'status']
-    success_url = reverse_lazy('manage_post_list')
+    fields = ['title', 'slug', 'body', 'publish', 'status']
+    success_url = reverse_lazy('management:manage_post_list')
     template_name = 'blog/manage/post/form.html'
 
 
@@ -59,5 +61,6 @@ class PostEditView(OwnerPostEditMixin, UpdateView):
 class PostDeleteView(PermissionRequiredMixin, OwnerPostMixin, DeleteView):
     """Delete a course"""
     template_name = 'blog/manage/post/delete.html'
-    success_url = reverse_lazy('manage_post_list')
+    success_url = reverse_lazy('management:manage_post_list')
     permission_required = 'post.delete_post'
+    # context_instance = RequestContext(request)

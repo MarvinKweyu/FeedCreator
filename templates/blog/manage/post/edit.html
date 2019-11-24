@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+<!-- to create a nwe course: COurseCreateView and CourseUpdateView -->
+<!-- in this case we are updating an existing course -->
+{% load post %}
+{% block title %}
+    {% if object %}
+        Edit post '{{ object.title }}'
+    {% else %}
+        Create new post
+    {% endif %}
+{% endblock title %}
+
+{% block content %}
+<h1>
+    {% if object%}
+        Edit post "{{ object.title}}"
+    {% else %}
+        Create new post
+    {% endif %}
+
+</h1>
+
+<div class="module">
+    <h2>Post info</h2>
+    <form action="." method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p><input type="submit" value="Save post"></p>
+    </form>
+</div>
+
+{% endblock content %}
+

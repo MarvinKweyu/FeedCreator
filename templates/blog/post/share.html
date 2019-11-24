@@ -1,4 +1,8 @@
 {% extends 'blog/base.html' %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery="full" %}
+{% bootstrap_messages %}
 
 {%block title%}Share post{%endblock title%}
 
@@ -13,7 +17,8 @@
         <form method="post" action=".">
             <!-- avoif cross-site requst forgery -->
             {% csrf_token %} 
-            {{form.as_p}}
+{#            {{form.as_p}}#}
+            {% bootstrap_form form layout="horizontal" %}
             <input type="submit" value="Send e-mail">
         </form>
     {% endif %}
