@@ -65,19 +65,14 @@
         {% endblock content %}
     </div>
 
-
-        <br/><br/><br/>
-
+    <div class="admin-panel " id="sidebar">
+    <br/><br/><br/>
         <h3> Administrator navigation</h3>
         <p>
-            <a href="{% url 'management:manage_post_list' %}">Home </a>
-
-{#            <a href="{% url 'management:post_edit' post.id %}">Edit</a>#}
-{#            <a href="{% url 'management:post_delete' post.id %}">Delete</a>#}
-{#            <a href="{% url 'post_edit' post.id %}">Edit modules</a>#}
-
+            <a href="{% url 'management:manage_post_list' %}">Home</a><br>
+            <a href="#">My drafts</a>
         </p>
-
+</div>
 
 </body>
 </html>

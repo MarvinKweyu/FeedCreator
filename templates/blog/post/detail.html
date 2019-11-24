@@ -1,4 +1,6 @@
-{% extends 'blog/base.html' %} 
+{% extends 'blog/base.html' %}
+{#social media sharing#}
+{% load social_widgets %}
 {% load blog_tags %}
 {% load bootstrap4 %}
 {% bootstrap_css %}
@@ -20,6 +22,7 @@
         <a href="{% url 'blog:post_share' post.id %} "> Share this post</a>
 
     </p>
+{#    {% social_widget_render "facebook/likebox.html" href="https://www.facebook.com/FacebookDevelopers" %}#}
     <!-- for similar posts -->
     <h2>Similar posts</h2>
     {% for post in similar_posts %}
