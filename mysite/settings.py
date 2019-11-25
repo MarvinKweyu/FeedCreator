@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'django.contrib.postgres',  # allow text searching
     'bootstrap4',
     'crispy_forms',
-    "social_widgets", # social media sharing
     'django_social_share',
 ]
 
@@ -74,7 +73,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.core.context_processors.request',
             ],
         },
     },
