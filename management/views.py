@@ -18,11 +18,10 @@ class OwnerMixin(object):
 
 
 class OwnerEditMixin(object):
-    print('reached')
+
     """ When form is submitted , set current user as owner of object"""
-    def form_valid(self):
+    def form_valid(self,form):
         """used by CRUD"""
-        # print("Work")
         form.instance.author = self.request.user
         return super(OwnerEditMixin, self).form_valid(form)
 
@@ -30,13 +29,13 @@ class OwnerEditMixin(object):
 class OwnerPostMixin(OwnerMixin, LoginRequiredMixin):
     model = Post
     # fields to  include in CRUD
-    fields = ['title', 'slug', 'body', 'publish', 'status']
+    fields = ['title', 'slug','featured_image', 'body', 'publish', 'status']
     success_url = reverse_lazy('management:manage_post_list')
     template_name = 'blog/manage/post/form.html'
 
 
 class OwnerPostEditMixin(OwnerPostMixin, OwnerEditMixin):
-    fields = ['title', 'slug', 'body', 'publish', 'status']
+    fields = ['title', 'slug','featured_image', 'body', 'publish', 'status']
     success_url = reverse_lazy('management:manage_post_list')
     template_name = 'blog/manage/post/form.html'
 
