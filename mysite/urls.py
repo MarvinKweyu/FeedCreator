@@ -20,6 +20,9 @@ from blog.sitemaps import PostSitemap
 
 # from django.views.generic.base import TemplateView
 from django.views.generic import TemplateView
+# for static files
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 sitemaps = {
@@ -32,4 +35,4 @@ urlpatterns = [
     path('news/', include('blog.urls', namespace='blog')),  # user side
     path('administrator/', include('management.urls', namespace='management')),  # manager app
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps}, name='django.contrib.sitemaps.views.sitemap')
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

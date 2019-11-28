@@ -15,6 +15,9 @@
     <p class="date">
         Published {{post.publish}} by {{post.author}}
     </p>
+    {% if post.featured_image %}
+         <img src="{{ post.featured_image.url }}" alt="{{ post.title }}"><br/>
+    {% endif %}
     {{post.body |markdown}}
     <p>
         <!-- include the post.id since the view requires it as a param -->

@@ -177,3 +177,6 @@ from django.urls import reverse_lazy
 LOGIN_REDIRECT_URL = reverse_lazy('management:manage_post_list') # where do we go after login
 LOGIN_URL = reverse_lazy('management:login') # take user to log in
 
+# upload images
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

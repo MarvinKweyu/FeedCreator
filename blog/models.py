@@ -26,7 +26,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=250,unique_for_date='publish') #URL SEO friendly
     # a user can have multiple posts
     author = models.ForeignKey(User,on_delete=models.CASCADE,related_name='blog_posts')
-    featured_image = models.ImageField(upload_to='featured_images/%Y/%m/%d', blank=True)
+    featured_image = models.ImageField(upload_to='featured_images/', blank=True)
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add saves date automatically while creating
