@@ -63,9 +63,9 @@
               <a class="nav-link js-scroll-trigger" href="{% url 'blog:post_list' %}">News</a>
           </li>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
           </li>
@@ -157,7 +157,7 @@
               </div>
               <div class="carousel-caption">
                 <h3 class="h3-responsive">Conference with KNCCI</h3>
-                <p>Meeting</p>
+                <p>Trade between South Africa and Kenya</p>
               </div>
             </div>
             <div class="carousel-item">
@@ -168,7 +168,7 @@
               </div>
               <div class="carousel-caption">
                 <h3 class="h3-responsive">Us</h3>
-                <!-- <p>Secondary text</p> -->
+                <p>We are Benjava</p>
               </div>
             </div>
             <div class="carousel-item">
@@ -190,7 +190,18 @@
               </div>
               <div class="carousel-caption">
                 <h3 class="h3-responsive">Conference with KNCCI</h3>
-                <p>Fourth text</p>
+                <p>Trade between Indonesia and Kenya</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <!--Mask color-->
+              <div class="view">
+                <img class="d-block w-100" src="{% static 'img/portfolio/IMG-6531.jpg' %}" alt="Fourth slide">
+                <div class="mask rgba-black-slight"></div>
+              </div>
+              <div class="carousel-caption">
+                <h3 class="h3-responsive">Launch of MPOST</h3>
+                <p>Serena Hotel</p>
               </div>
             </div>
           </div>
@@ -216,12 +227,23 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">About</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h3 class="section-subheading text-muted">A brief overview.</h3>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <p>Something about us</p>
+            <p>
+            Founded in 2014, Benjava is the leading boutique PR firm in Nairobi. With staff in Kenya and Uganda and strong partners
+            in East Africa, we offer a full range of communications services, to both Kenya and international clients. Overall, we
+            know how to translate global strategies into local successful campaigns and as well as to replicate local experiences
+            into global programs.
+            </p>
+            <p>
+            At Benjava communication and PR firm, our staff have vast experience and background in management, marketing,
+            advertising, public relations, journalism, data science and design, we are passionate about helping our clients develop
+            long-term relationships with stakeholders such as journalists, influencers, B2B clients, employees and consumers. We
+            are, above all, business consultants with a special ability to drive results through content and relationships
+            </p>
         </div>
       </div>
     </div>
@@ -330,7 +352,7 @@
               class="img-fluid" alt=""> </div>
         </div>
         <div class="col-lg-3 col-md-4 col-xs-6">
-          <div class="client-logo"> <img src="https://bootstrapmade.com/demo/themes/NewBiz/img/clients/client-8.png"
+          <div class="client-logo"> <img src="{% static 'img/partners/NTA.jpg' %}"
               class="img-fluid" alt=""> </div>
         </div>
       </div>
@@ -363,20 +385,12 @@
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
         <!-- Links -->
-        <!-- <h6 class="text-uppercase font-weight-bold">Products</h6>
+        <h6 class="text-uppercase font-weight-bold">Other services</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>
-          <a href="#!">MDBootstrap</a>
-        </p>
-        <p>
-          <a href="#!">MDWordPress</a>
-        </p>
-        <p>
-          <a href="#!">BrandFlow</a>
-        </p>
-        <p>
-          <a href="#!">Bootstrap Angular</a>
-        </p> -->
+        <p>Paid media</p>
+        <p>Advertorials</p>
+        <p>Brandend content</p>
+        <p>Content marketing</p>
 
       </div>
       <!-- Grid column -->
@@ -391,7 +405,7 @@
           <a href="#!">Facebook</a>
         </p>
         <p>
-          <a href="https://twitter.com/Benjava_Ke">Twitter</a>
+          <a href="https://twitter.com/Benjava254">Twitter</a>
         </p>
         <p>
           <a href="https://www.instagram.com/benjava254/">Instagram</a>
@@ -407,13 +421,12 @@
         <h6 class="text-uppercase font-weight-bold">Contact</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
-          <i class="fas fa-home mr-3"></i> Nairobi, PO. Box, Kenya</p>
-        <p>
+          <i class="fas fa-home mr-3"></i>PO. Box 1910-00200 Nairobi,Kenya </p>
+        <!-- <p>
           <i class="fas fa-envelope mr-3"></i> info@example.com</p>
-        <p>
-          <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-        <p>
-          <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+        <p> -->
+          <i class="fas fa-phone mr-3"></i> +254728059851</p>
+        <!-- <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p> -->
 
       </div>
       <!-- Grid column -->

@@ -19,11 +19,11 @@
          <img src="{{ post.featured_image.url }}" alt="{{ post.title }}"><br/>
     {% endif %}
     {{post.body |markdown}}
-    <p>
+    <!-- <p> -->
         <!-- include the post.id since the view requires it as a param -->
-        <a href="{% url 'blog:post_share' post.id %} "> Share this post</a>
+        <!-- <a href="{% url 'blog:post_share' post.id %} "> Share this post</a> -->
 
-    </p>
+    <!-- </p> -->
 {#    {% social_widget_render "facebook/likebox.html" href="https://www.facebook.com/FacebookDevelopers" %}#}
     <!-- for similar posts -->
     <h2>Similar posts</h2>
@@ -36,14 +36,15 @@
     {% endfor %}
     
     <!-- use django ORM i.e from the model class -->
+    <!--
     {% with comments.count as total_comments %} 
     <h2>
-        <!-- pluralize comments depending on howw many there are -->
+        pluralize comments depending on howw many there are
         {{total_comments}} comment{{ total_comments|pluralize }}
     </h2>
     {% endwith %}
 
-    <!-- include list of comments -->
+    include list of comments
     {% for comment in comments %}
     <div class="comment">
         <p class="info">
@@ -67,10 +68,11 @@
             {% csrf_token %}
 {#            {{ comment_form.as_p }}#}
             {% bootstrap_form comment_form layout="horizontal" %}
-            <!-- <p><input type="submit" value="Add comment"></p> -->
-            <button type="submit" class="btn btn-primary">Log in</button>
+            
+            <button type="submit" class="btn btn-primary">Add comment</button>
         </form>
     {% endif %}
+    -->
     
 
 {%endblock content%}
