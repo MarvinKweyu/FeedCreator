@@ -67,7 +67,8 @@
             {% csrf_token %}
 {#            {{ comment_form.as_p }}#}
             {% bootstrap_form comment_form layout="horizontal" %}
-            <p><input type="submit" value="Add comment"></p>
+            <!-- <p><input type="submit" value="Add comment"></p> -->
+            <button type="submit" class="btn btn-primary">Log in</button>
         </form>
     {% endif %}
     

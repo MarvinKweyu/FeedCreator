@@ -1,0 +1,35 @@
+{% extends 'blog/manage/base_management.html' %}
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery="full" %}
+{% bootstrap_messages %}
+
+<!-- template for ManageCourseListView -->
+<!-- list all draft posts -->
+<!-- Todo: not implemented as a template -->
+{% block title %}My Drafts posts{% endblock title %}
+
+{% block content %}
+<h1>My Posts</h1>
+
+<div class="module">
+    <p>
+        <a href="{% url 'management:post_create' %}" class="button">Create new Post</a>
+    </p>
+    {% for post in object_list %}
+    <div class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h3 class="mb-1">{{ post.title }}</h3>
+        </div>
+        <small>{{ post.body }}</small>
+        <p>
+            <a href="{% url 'management:post_edit' post.id %}">Edit</a>
+            <a href="{% url 'management:post_delete' post.id %}">Delete</a>
+        </p>
+    </div>
+    {% empty %}
+    <p>You haven't created any posts yet</p>
+    {% endfor %}
+</div>
+{% endblock content%}

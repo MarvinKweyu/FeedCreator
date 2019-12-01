@@ -153,9 +153,9 @@ STATIC_URL = '/static/'
 
 # look for static files in this directory and move them to static root directory
 # used during collect static
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static_cdn'),
+]
 
 # store static in this directory
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
@@ -175,7 +175,7 @@ SITE_ID = 1
 from django.urls import reverse_lazy
 
 LOGIN_REDIRECT_URL = reverse_lazy('management:manage_post_list') # where do we go after login
-LOGIN_URL = reverse_lazy('management:login') # take user to log in
+LOGOUT_REDIRECT_URL = reverse_lazy('blog:post_list') # take user to log in
 
 # upload images
 MEDIA_URL = '/media/'

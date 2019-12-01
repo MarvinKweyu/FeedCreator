@@ -16,8 +16,6 @@
 
   <title>Benjava</title>
   
-  
-  
   <!-- Material Design Bootstrap -->
   <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
   
@@ -33,13 +31,14 @@
   
   <!-- Custom styles for this template -->
   <link href="{% static 'css/agency.css'%}" rel="stylesheet">
+  <script src="{% static 'js/custom/team.js' %}"></script>
   <!-- more custom styling -->
-  <link rel="stylesheet" href="{% static 'css/custom.css'%}">
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 
-<body id="page-top">
+<body id="page-top" >
   
 
   <!-- Navigation -->
@@ -153,7 +152,7 @@
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
               <div class="view">
-                <img class="d-block w-100" src="{% static 'img/portfolio/DSC_0014.jpg' %}" />
+                <img class="d-block w-100" src="{% static 'img/portfolio/DSC_0014.jpg' %}" alt='conference with KNCCI'/>
                 <div class="mask rgba-black-light"></div>
               </div>
               <div class="carousel-caption">
@@ -164,23 +163,23 @@
             <div class="carousel-item">
               <!--Mask color-->
               <div class="view">
-                <img class="d-block w-100" src="{% static 'img/portfolio/IMG_0967.jpg'%}" alt="Second slide">
+                <img class="d-block w-100" src="{% static 'img/portfolio/benjava.jpg' %}" alt="Second slide">
                 <div class="mask rgba-black-strong"></div>
               </div>
               <div class="carousel-caption">
-                <h3 class="h3-responsive">Strong mask</h3>
-                <p>Secondary text</p>
+                <h3 class="h3-responsive">Us</h3>
+                <!-- <p>Secondary text</p> -->
               </div>
             </div>
             <div class="carousel-item">
               <!--Mask color-->
               <div class="view">
-                <img class="d-block w-100" src="{% static 'img/portfolio/benjava.jpg' %}" alt="Third slide">
+                <img class="d-block w-100" src="{% static 'img/portfolio/tax.jpg' %}" alt="Third slide">
                 <div class="mask rgba-black-slight"></div>
               </div>
               <div class="carousel-caption">
-                <h3 class="h3-responsive">Slight mask</h3>
-                <p>Third text</p>
+                <h3 class="h3-responsive">NTA</h3>
+                <p>Tax accountability outreach</p>
               </div>
             </div>
             <div class="carousel-item">
@@ -222,77 +221,13 @@
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <ul class="timeline">
-            <li>
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="{% static 'img/about/1.jpg' %}" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>2009-2011</h4>
-                  <h4 class="subheading">Our Humble Beginnings</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="{% static 'img/about/2.jpg' %}" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>March 2011</h4>
-                  <h4 class="subheading">An Agency is Born</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="{% static 'img/about/3.jpg' %}" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>December 2012</h4>
-                  <h4 class="subheading">Transition to Full Service</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="{% static 'img/about/4.jpg' %}" alt="">
-              </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>July 2014</h4>
-                  <h4 class="subheading">Phase Two Expansion</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <h4>Be Part
-                  <br>Of Our
-                  <br>Story!</h4>
-              </div>
-            </li>
-          </ul>
+          <p>Something about us</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Team -->
+  <!-- Team
   <section class="bg-light page-section" id="team">
     <div class="container">
       <div class="row">
@@ -305,25 +240,8 @@
         <div class="col-sm-4">
           <div class="team-member">
             <img class="mx-auto rounded-circle " src="{% static 'img/team/1.jpg' %}" alt="">
-            <h4>Kay Garland</h4>
-            <p class="text-muted">Lead Designer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
+            <h4>Dan</h4>
+            <p class="text-muted">Director</p>
           </div>
         </div>
         <div class="col-sm-4">
@@ -331,53 +249,89 @@
             <img class="mx-auto rounded-circle wow fadeInUp" src="{% static 'img/team/sofia.jpg' %}" alt="">
             <h4>Sofia Ali</h4>
             <p class="text-muted">CEO</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="team-member">
             <img class="mx-auto rounded-circle" src="{% static 'img/team/3.jpg' %}" alt="">
-            <h4>Diana Pertersen</h4>
-            <p class="text-muted">Lead Developer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
+            <h4>Sharban</h4>
+            <p class="text-muted">Marketing</p>
           </div>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-lg-8 mx-auto text-center">
           <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+        </div>
+      </div> -->
+      <!-- <div class="col-sm-12">
+        <div class="team-member">
+          <img class="mx-auto rounded-circle " src="{% static 'img/team/1.jpg' %}" alt="">
+          <h4>Bakari</h4>
+          <p class="text-muted">Marketing</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="team-member">
+          <img class="mx-auto rounded-circle " src="{% static 'img/team/1.jpg' %}" alt="">
+          <h4>Raphael</h4>
+          <p class="text-muted">Lead Designer</p>
+      
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="team-member">
+          <img class="mx-auto rounded-circle " src="{% static 'img/team/1.jpg' %}" alt="">
+          <h4>Melvin</h4>
+          <p class="text-muted">Lead Designer</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+<!-- partners and clients -->
+  <section id="clients" class="section-bg">
+    <div class="container">
+      <div class="section-header">
+        <h3>Our Partners/Clients</h3>
+        <p>Meet our happy clients</p>
+      </div>
+      <div class="row no-gutters clients-wrap clearfix wow fadeInUp"
+        style="visibility: visible; animation-name: fadeInUp;">
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="client-logo"> <img src="{% static 'img/logos/apo.jpg' %}"
+              class="img-fluid" alt=""> </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="client-logo"> <img
+              src="{% static 'img/partners/egytianembassy.jpg' %}"
+              class="img-fluid" alt=""> </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="client-logo"> <img
+              src="{% static 'img/partners/american_friends.png' %}"
+              class="img-fluid" alt=""> </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="client-logo"> <img src="{% static 'img/partners/KNCCI.png' %}"
+              class="img-fluid" alt=""> </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="client-logo"> <img src="{% static 'img/logos/indonesia.jpg' %}"
+              class="img-fluid" alt=""> </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="client-logo"> <img src="{% static 'img/partners/mama_gas.jpg' %}"
+              class="img-fluid" alt=""> </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="client-logo"> <img src="{% static 'img/partners/SHARJA.jpg' %}"
+              class="img-fluid" alt=""> </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="client-logo"> <img src="https://bootstrapmade.com/demo/themes/NewBiz/img/clients/client-8.png"
+              class="img-fluid" alt=""> </div>
         </div>
       </div>
     </div>
@@ -409,7 +363,7 @@
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
         <!-- Links -->
-        <h6 class="text-uppercase font-weight-bold">Products</h6>
+        <!-- <h6 class="text-uppercase font-weight-bold">Products</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p>
           <a href="#!">MDBootstrap</a>
@@ -422,7 +376,7 @@
         </p>
         <p>
           <a href="#!">Bootstrap Angular</a>
-        </p>
+        </p> -->
 
       </div>
       <!-- Grid column -->
@@ -437,13 +391,10 @@
           <a href="#!">Facebook</a>
         </p>
         <p>
-          <a href="#!">Twitter</a>
+          <a href="https://twitter.com/Benjava_Ke">Twitter</a>
         </p>
         <p>
-          <a href="#!">Shipping Rates</a>
-        </p>
-        <p>
-          <a href="#!">Help</a>
+          <a href="https://www.instagram.com/benjava254/">Instagram</a>
         </p>
 
       </div>
@@ -475,7 +426,7 @@
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2019 Copyright:
-    <a href="#"> benjava.co.ke</a>
+    <a href="#"> benjava.org</a>
   </div>
   <!-- Copyright -->
 

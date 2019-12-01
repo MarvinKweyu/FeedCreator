@@ -20,7 +20,7 @@
     <link rel="icon" href="{% static 'img/benjava_logo.png' %}" type="image/ico"/>
 
 
-    <!-- morecustom styling -->
+    <!-- morecustom styling. Affect sidebar -->
   <link rel="stylesheet" href="{% static 'css/custom.css'%}">
 </head>
 <body >
@@ -64,15 +64,15 @@
         {% block content %}
         {% endblock content %}
     </div>
-
     <div class="admin-panel " id="sidebar">
-    <br/><br/><br/>
+        <br /><br /><br />
         <h3> Administrator navigation</h3>
         <p>
             <a href="{% url 'management:manage_post_list' %}">Home</a><br>
+            <a href="{% url 'management:logout' %}">Logout</a><br>
             <a href="#">My drafts</a>
         </p>
-</div>
+    </div>
 
 </body>
 </html>
