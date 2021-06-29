@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
+from django.urls import reverse_lazy
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -38,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles', # manage static files
+    'django.contrib.staticfiles',  # manage static files
     'blog.apps.BlogConfig',  # user side
-    'management.apps.ManagementConfig', # administrator management
+    'management.apps.ManagementConfig',  # administrator management
     'taggit',
     'django.contrib.sites',
     'django.contrib.sitemaps',
@@ -65,7 +66,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR + '/templates/',],
+        'DIRS': [BASE_DIR + '/templates/', ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,12 +86,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db1.sqlite3'),
-    # }
-    
-    #* using mysql
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+
+    # * using mysql
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
     #     'NAME': 'blog',
@@ -100,16 +101,16 @@ DATABASES = {
     #     'PORT':'3306',
     # }
 
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'benjava_refactored',
-        'USER': 'benjava',
-        'PASSWORD': 'benjava',
-        # 'HOST':'localhost',
-        # 'PORT':'3306',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'benjava_refactored',
+    #     'USER': 'benjava',
+    #     'PASSWORD': 'benjava',
+    #     # 'HOST':'localhost',
+    #     # 'PORT':'3306',
+    # }
 
-    
+
 }
 
 
@@ -172,10 +173,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SITE_ID = 1
 
-from django.urls import reverse_lazy
 
-LOGIN_REDIRECT_URL = reverse_lazy('management:manage_post_list') # where do we go after login
-LOGOUT_REDIRECT_URL = reverse_lazy('blog:post_list') # take user to log in
+LOGIN_REDIRECT_URL = reverse_lazy(
+    'management:manage_post_list')  # where do we go after login
+LOGOUT_REDIRECT_URL = reverse_lazy('blog:post_list')  # take user to log in
 
 # upload images
 MEDIA_URL = '/media/'
