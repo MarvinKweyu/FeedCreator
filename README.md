@@ -1,16 +1,17 @@
-# benjava-refactored
-A refactor of benjava site
+# FeedCreator
 
-Administrators password
+Made with django SSR,FeedCreator is a publishing platform with articles grouped to drafts and published status.
 
-**Backdoor**
+LocalSeup
+---
 
-username:`administrator`
+Clone the repo and install requirements. Run `manage.py`
 
-password:`MarvinKweyu`
+```bash
+pip install -r requirements.txt
 
-**Sofia**
+python manage.py runserver
+```
+Access the server via: `localhost:8000`
 
-username:``
-
-password:``
+Contributions are welcome
