@@ -18,8 +18,8 @@
                 {% for post in posts %}
                     <section class="list-group-item list-group-item-action">
                         <div>
-                            <h2>
-                                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                            <h2 class="post-title" >
+                                <a class="fw-bold post-title" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                             </h2>
                         </div>
                     <p class="tags">

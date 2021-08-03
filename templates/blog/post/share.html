@@ -7,6 +7,7 @@
 {%block title%}Share post{%endblock title%}
 
 {% block content %}
+<div class="container">
     {% if sent %}
         <h1>E-mail successfully sent</h1>
         <p>
@@ -15,12 +16,13 @@
     {% else %}
         <h1>Share "{{post.title}}"  by e-mail</h1>
         <form method="post" action=".">
-            <!-- avoif cross-site requst forgery -->
+            <!-- avoid cross-site requst forgery -->
             {% csrf_token %} 
 {#            {{form.as_p}}#}
             {% bootstrap_form form layout="horizontal" %}
-            <input type="submit" value="Send e-mail">
+            <input type="submit" value="Send e-mail" class="btn btn-primary">
         </form>
     {% endif %}
 
+</div>
 {% endblock content %}
