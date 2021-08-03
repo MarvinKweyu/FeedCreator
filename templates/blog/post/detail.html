@@ -42,7 +42,7 @@
     
     {% with comments.count as total_comments %} 
     <h2>
-        pluralize comments depending on howw many there are
+        <!-- pluralize comments depending on howw many there are -->
         {{total_comments}} comment{{ total_comments|pluralize }}
     </h2>
     {% endwith %}
