@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '192.168.0.5',
+    "feed-creator-app.herokuapp.com",
     "benjava-comms.herokuapp.com",
     "127.0.0.1"
 ]
