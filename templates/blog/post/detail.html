@@ -10,20 +10,23 @@
 {%block title%} {{post.title}}{%endblock title%}
 
 {%block content%}
-    <br/><br/><br/>
-    <h1>{{post.title}}</h1>
+<div class="container">
+
+    <h1 class="mt-5">{{post.title}}</h1>
     <p class="date">
         Published {{post.publish}} by {{post.author}}
     </p>
     {% if post.featured_image %}
-         <img src="{{ post.featured_image.url }}" alt="{{ post.title }}"><br/>
+         <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" height="200px" width="100%"><br/>
     {% endif %}
+    <div class="my-3">
     {{post.body |markdown}}
-    <!-- <p> -->
+    </div>
+    <p>
         <!-- include the post.id since the view requires it as a param -->
-        <!-- <a href="{% url 'blog:post_share' post.id %} "> Share this post</a> -->
+        <a href="{% url 'blog:post_share' post.id %} "> Share this post</a>
 
-    <!-- </p> -->
+    </p>
 {#    {% social_widget_render "facebook/likebox.html" href="https://www.facebook.com/FacebookDevelopers" %}#}
     <!-- for similar posts -->
     <h2>Similar posts</h2>
@@ -36,7 +39,7 @@
     {% endfor %}
     
     <!-- use django ORM i.e from the model class -->
-    <!--
+    
     {% with comments.count as total_comments %} 
     <h2>
         pluralize comments depending on howw many there are
@@ -66,14 +69,13 @@
         <h2>Add new comment</h2>
         <form action="." method="post">
             {% csrf_token %}
-{#            {{ comment_form.as_p }}#}
+ <!-- {{ comment_form.as_p }} -->
             {% bootstrap_form comment_form layout="horizontal" %}
             
-            <button type="submit" class="btn btn-primary">Add comment</button>
+            <button type="submit" class="btn btn-primary shadow-none">Add comment</button>
         </form>
     {% endif %}
-    -->
-    
+    </div>
 
 {%endblock content%}
 

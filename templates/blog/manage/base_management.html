@@ -3,10 +3,10 @@
 {% load static %}
 {% load blog_tags %}
 
-{% load bootstrap4 %}
+<!-- {% load bootstrap4 %}
 {% bootstrap_css %}
 {% bootstrap_javascript jquery="full" %}
-{% bootstrap_messages %}
+{% bootstrap_messages %} -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +18,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="{% static 'css/blog.css' %}" rel="stylesheet" >
      <!-- site favicon -->
@@ -64,19 +68,29 @@
     </nav>
 
 <!-- pace new page content within -->
-    <div id="content">
-        {% block content %}
-        {% endblock content %}
+    <div id="container">
+        <div class="col-2">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        <div class="col-4">
+            <h3> Administrator navigation</h3>
+            <p>
+                <a href="{% url 'management:manage_post_list' %}">Home</a><br>
+                <a href="{% url 'management:logout' %}">Logout</a><br>
+                <a href="#">My draftdfs</a>
+            </p>
+        </div>
+        
     </div>
-    <div class="admin-panel " id="sidebar">
-        <br /><br /><br />
+    <!-- <div class="admin-panel " id="sidebar">
         <h3> Administrator navigation</h3>
         <p>
             <a href="{% url 'management:manage_post_list' %}">Home</a><br>
             <a href="{% url 'management:logout' %}">Logout</a><br>
             <a href="#">My drafts</a>
         </p>
-    </div>
+    </div> -->
 
 </body>
 </html>
